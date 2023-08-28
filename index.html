@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Daisy UI and Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://kit.fontawesome.com/0a3b51aff3.js" crossorigin="anonymous"></script>
+
+    <title>Phone Hunter</title>
+</head>
+
+<body>
+
+    <header class="container mx-auto p-8">
+        <!-- The Nav Bar -->
+        <div class="flex justify-between items-center">
+            <div>
+                <h2 class="text-3xl text-black font-bold cursor-pointer hover:text-[#262699] transition-all duration-300">Phone Hunter</h2>
+            </div>
+            <div>
+                <button class="btn btn-neutral hover:bg-[#262699] hover:text-white hover:border-[#ffffff00] transition-all duration-300">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="container mx-auto p-8">
+
+            <!--Search Bar -->
+            <div class="flex justify-end items-center gap-5 mb-8">
+                <input id="search-input" type="text" placeholder="search..." class="px-5 py-2 border-[1px] border-[lightgray] rounded-md focus:outline-none focus:border-[gray]">
+                <button id="input-search-button"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
+            </div>
+
+            <!-- Products -->
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- <div
+                    class="w-[100%] flex flex-col justify-center items-center text-center gap-4 border-[1px] border-[lightgray] p-5 rounded-md hover:shadow-[0_30px_80px_-5px_#cfcfcf]">
+                    <div class="p-8 bg-[#ebebeb] rounded-md">
+                        <img src="./Rectangle 4.png" alt="" class="rounded-md">
+                    </div>
+                    <h2 class="text-2xl font-bold">Iphone 13 Pro Max</h2>
+                    <p>There are many variations of passages of available, but the majority have suffered</p>
+                    <h3 class="text-2xl font-semibold">$999</h3>
+                    <button class="btn btn-neutral hover:bg-[#262699] hover:text-white hover:border-[#ffffff00]">Show Details</button>
+                </div> -->
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+    <script src="./JS/script.js"></script>
+</body>
+
+</html>
