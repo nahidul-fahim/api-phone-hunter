@@ -35,6 +35,10 @@ const displayPhones = phones => {
         phoneContainer.appendChild(deviceCard);
     });
 
+    // Hide spinner
+    loadingSignFunction(false);
+
+
 }
 
 
@@ -42,6 +46,17 @@ const searchButtonClicked = () => {
     const searchInputField = document.getElementById('search-input');
     const searchInputText = searchInputField.value;
     phoneDataLoad(searchInputText);
+    loadingSignFunction(true);
+}
+
+const loadingSignFunction = (isLoading) => {
+    const loadingSign = document.getElementById('loading-sign');
+    if (isLoading){
+        loadingSign.classList.remove('hidden');
+    }
+    else {
+        loadingSign.classList.add('hidden');
+    }
 }
 
 const searchButton = document.getElementById('input-search-button');
