@@ -5,9 +5,20 @@ const phoneDataLoad = function phoneDataLoad(searchText) {
 };
 
 const displayPhones = phones => {
-    const phonesData = phones.data;
+    const showAllButton = document.getElementById('show-all-button');
+    let phonesData = phones.data;
+    const phonesDataLength = phonesData.length
+    console.log(phonesDataLength);
+    if (phonesDataLength >= 12) {
+        showAllButton.classList.remove('hidden');
+    }
+    else {
+        showAllButton.classList.add('hidden');
+    }
+
     const phoneContainer = document.getElementById('phone-container');
     phoneContainer.innerHTML = '';
+    phonesData = phonesData.slice(0,12);
 
     phonesData.forEach(phone => {
         const deviceCard = document.createElement('div');
@@ -28,10 +39,8 @@ const displayPhones = phones => {
 
 
 const searchButtonClicked = () => {
-    console.log("The Search button is working");
     const searchInputField = document.getElementById('search-input');
     const searchInputText = searchInputField.value;
-    console.log(searchInputText);
     phoneDataLoad(searchInputText);
 }
 
