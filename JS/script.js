@@ -1,10 +1,15 @@
+// Fetching Data from server
+
 const phoneDataLoad = function phoneDataLoad(searchText) {
     fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
         .then(res => res.json())
         .then(data => displayPhones(data))
 };
 
-const displayPhones = phones => {
+
+// Display the phones
+
+const displayPhones = (phones) => {
     const showAllButton = document.getElementById('show-all-button');
     let phonesData = phones.data;
     const phonesDataLength = phonesData.length
@@ -28,19 +33,19 @@ const displayPhones = phones => {
         <img src="${phone.image}" alt="" class="rounded-md">
         </div>
         <h2 class="text-2xl font-bold">${phone.phone_name}</h2>
-        <p>${phone.slug}</p>
+        <p>There are many variations of passages of available, but the majority have suffered</p>
         <h3 class="text-2xl font-semibold">$999</h3>
-        <button class="btn btn-neutral hover:bg-[#262699] hover:text-white hover:border-[#ffffff00] transition-all duration-300">Show Details</button>
+        <button id="show-details-button" class="btn btn-neutral hover:bg-[#262699] hover:text-white hover:border-[#ffffff00] transition-all duration-300">Show Details</button>
         `;
         phoneContainer.appendChild(deviceCard);
     });
 
     // Hide spinner
     loadingSignFunction(false);
-
-
 }
 
+
+// Search button and search input bar functionality
 
 const searchButtonClicked = () => {
     const searchInputField = document.getElementById('search-input');
@@ -48,6 +53,9 @@ const searchButtonClicked = () => {
     phoneDataLoad(searchInputText);
     loadingSignFunction(true);
 }
+
+
+// Loading sign function
 
 const loadingSignFunction = (isLoading) => {
     const loadingSign = document.getElementById('loading-sign');
@@ -61,3 +69,16 @@ const loadingSignFunction = (isLoading) => {
 
 const searchButton = document.getElementById('input-search-button');
 searchButton.addEventListener('click', searchButtonClicked);
+
+
+// Show all button functionlaity. (It's incomplete)
+
+const showAllDeviceFunction = () => {
+    searchButtonClicked(true);
+}
+
+document.getElementById('show-all-button').addEventListener('click', showAllDeviceFunction);
+
+
+// Show details button functionality
+
