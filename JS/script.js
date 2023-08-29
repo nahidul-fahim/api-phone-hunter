@@ -35,7 +35,7 @@ const displayPhones = (phones) => {
         <h2 class="text-2xl font-bold">${phone.phone_name}</h2>
         <p>There are many variations of passages of available, but the majority have suffered</p>
         <h3 class="text-2xl font-semibold">$999</h3>
-        <button id="show-details-button" class="btn btn-neutral hover:bg-[#262699] hover:text-white hover:border-[#ffffff00] transition-all duration-300">Show Details</button>
+        <button class="btn btn-neutral hover:bg-[#262699] hover:text-white hover:border-[#ffffff00] transition-all duration-300" onclick="showDetailsFunction('${phone.slug}')">Show Details</button>
         `;
         phoneContainer.appendChild(deviceCard);
     });
@@ -81,4 +81,35 @@ document.getElementById('show-all-button').addEventListener('click', showAllDevi
 
 
 // Show details button functionality
+
+ const showDetailsFunction = (id) => {
+    fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
+        .then(res => res.json())
+        .then(data => showDeviceDetailsModal(data))
+    console.log("show details button clicked", id);
+ };
+
+ const showDeviceDetailsModal = (data) => {
+    show_device_details_modal.showModal();
+    const deviceData = data.data
+    console.log(deviceData.mainFeatures);
+    const deviceDetailContainer = document.getElementById('device-detail-container');
+
+    deviceDetailContainer.innerHTML = `
+    <div class="p-5 flex justify-center items-center">
+    <img src="${deviceData.image}" alt="" />
+    </div>
+    <div class="px-5 py-5 flex flex-col justify-start items-start gap-4">
+    <h3 id="device-name" class="font-bold text-2xl">${deviceData.name}</h3>
+    <h3 id="device-name" class="font-bold text-[18px]">Storage: <span class="text-base font-medium">${deviceData.mainFeatures.storage}</span></h3>
+    <h3 id="device-name" class="font-bold text-[18px]">Display Size: <span class="text-base font-medium">${deviceData.mainFeatures.displaySize}</span></h3>
+    <h3 id="device-name" class="font-bold text-[18px]">Chipset: <span class="text-base font-medium">${deviceData.mainFeatures.chipSet}</span></h3>
+    <h3 id="device-name" class="font-bold text-[18px]">Memory: <span class="text-base font-medium">${deviceData.mainFeatures.memory}</span></h3>
+    <h3 id="device-name" class="font-bold text-[18px]">Release Date: <span class="text-base font-medium">${deviceData.mainFeatures.releaseDate}</span></h3>
+    <h3 id="device-name" class="font-bold text-[18px]">Release Date: <span class="text-base font-medium">${deviceData.mainFeatures.releaseDate}</span></h3>
+    </div>
+    `
+ };
+
+
 

@@ -25,10 +25,14 @@
         <!-- The Nav Bar -->
         <div class="flex justify-between items-center">
             <div>
-                <h2 class="text-3xl text-black font-bold cursor-pointer hover:text-[#262699] transition-all duration-300">Phone Hunter</h2>
+                <h2
+                    class="text-3xl text-black font-bold cursor-pointer hover:text-[#262699] transition-all duration-300">
+                    Phone Hunter</h2>
             </div>
             <div>
-                <button class="btn btn-neutral hover:bg-[#262699] hover:text-white hover:border-[#ffffff00] transition-all duration-300">Sign Up</button>
+                <button
+                    class="btn btn-neutral hover:bg-[#262699] hover:text-white hover:border-[#ffffff00] transition-all duration-300">Sign
+                    Up</button>
             </div>
         </div>
     </header>
@@ -38,8 +42,10 @@
 
             <!--Search Bar -->
             <div class="flex justify-end items-center gap-5 mb-8">
-                <input id="search-input" type="text" placeholder="search..." class="px-5 py-2 border-[1px] border-[lightgray] rounded-md focus:outline-none focus:border-[gray]">
-                <button id="input-search-button"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
+                <input id="search-input" type="text" placeholder="search..."
+                    class="px-5 py-2 border-[1px] border-[lightgray] rounded-md focus:outline-none focus:border-[gray]">
+                <button id="input-search-button"><i class="fa-solid fa-magnifying-glass"
+                        style="color: #000000;"></i></button>
             </div>
 
             <div>
@@ -54,8 +60,27 @@
 
             <!-- Show All Button -->
             <div class="flex justify-center items-center">
-                <button id="show-all-button" class="hidden mt-8 btn btn-neutral hover:bg-[#262699] hover:text-white hover:border-[#ffffff00] transition-all duration-300">SHOW ALL</button>
+                <button id="show-all-button"
+                    class="hidden mt-8 btn btn-neutral hover:bg-[#262699] hover:text-white hover:border-[#ffffff00] transition-all duration-300">SHOW
+                    ALL</button>
             </div>
+
+            <!-- Show Modal -->
+
+            <!-- Open the modal using ID.showModal() method -->
+            <dialog id="show_device_details_modal" class="modal modal-bottom sm:modal-middle">
+                <form method="dialog" class="modal-box">
+                    <!-- <img id="device-image" src="" alt="">
+                    <h3 id="device-name" class="font-bold text-lg"></h3>
+                    <p id="device-storage-details"></p>
+                    <div class="modal-action"> -->
+                    <div id="device-detail-container">
+                    </div>
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn btn-neutral hover:bg-[#262699] hover:text-white hover:border-[#ffffff00] transition-all duration-300">Close</button>
+                    </div>
+                </form>
+            </dialog>
 
         </section>
     </main>
