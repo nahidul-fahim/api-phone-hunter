@@ -36,7 +36,6 @@ const displayPhones = (phones) => {
     else {
         phonesData = phonesData.slice(0,12);
 
-
         phonesData.forEach(phone => {
             const deviceCard = document.createElement('div');
             deviceCard.classList = `w-[100%] flex flex-col justify-center items-center text-center gap-5 border-[1px] border-[lightgray] p-8 rounded-md hover:shadow-[0_20px_60px_-5px_#cfcfcf] transition-all duration-300`;
@@ -107,7 +106,16 @@ document.getElementById('show-all-button').addEventListener('click', showAllDevi
     show_device_details_modal.showModal();
     const deviceData = data.data
     // console.log(deviceData);
-    // console.log(deviceData.mainFeatures);
+
+    /*
+    const sensors = deviceData.mainFeatures.sensors;
+
+    for (sensor of sensors){
+        console.log("the sensors are:", sensor);
+    }
+    console.log(sensors);
+    */
+
     const deviceDetailContainer = document.getElementById('device-detail-container');
 
     deviceDetailContainer.innerHTML = `
